@@ -1,0 +1,30 @@
+Assignment Day - 5 :
+LINUX COMMANDS:-
+
+COMMANDS                                               USAGE
+====================================================================
+1. Is                                     Displays information about files in the current directory.
+2. pwd 			    Displays current working directory.
+3. mkdir			    Creates a directory.
+4. cd 			              To navigate between different folders.
+5. rmdir 			    Removes empty directories from the directory list.
+6. cp 				    copy directories from one directory to another.
+7. mv 				    Rename or replace the files
+8. rm				    Delete files.
+9. unname			    Command to get the basic information about the os.
+10. locate		               Find a file in database
+11. touch 			     Create empty files
+12. ln                                     Create shortcuts to other files
+13. cat 			     Display file contents on terminal.
+14. clear 			     clear terminal
+15. ps				     Display the process in terminal
+16. man			     Access manual for all linux commands
+17. grep 			     search for specific string in an output.
+18. echo 			      Display active process in terminal
+19. wget			      Downlaod files from internet.
+20. whoami			      Create or update passwords from existinf users.
+21. sort			       sort the file content
+22. cal			       view calender in terminal.
+23. whereis			       To view the location of the command typed after this command.
+24. df 				      Check details of file system.
+25. wc			      Check the lines, word count and characters in a file using different options.
