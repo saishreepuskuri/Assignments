@@ -1,28 +1,32 @@
-package datastrcture.search;
+package javaassignments20;
 
 public class Linearsearch {
-
-	public static int linearSearch(int[] arr, int target) {
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] == target) {
+//method to perfrom linear search on an array of integers
+	public static int linearsearch(int[] array, int target)
+	{
+		for(int i=0; i<array.length; i++)
+		{
+			if(array[i]==target)
+			{
 				return i;
 			}
 		}
 		return -1;
 	}
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		int numbers[] = { 2, 4, 6, 7, 8, 9, 5, 1 };
-		int target = 5;
-		int result = linearSearch(numbers, target);
-		if (result != -1) {
-			System.out.println("element found at an index" + result);
-
-		} else {
-			System.out.println("element not found");
+		int [] array = {10,20,30,40,50};
+		int target=90;
+		int index = linearsearch(array, target);
+		if(index != -1)
+		{
+			System.out.println("element "+ target + "found at index " +index);
 		}
+		else
+		{
+			System.out.println("element " +target + " not found in the array");
+		}
+
 	}
 
 }

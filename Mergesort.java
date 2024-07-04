@@ -1,42 +1,74 @@
-package datastrcture.search;
+package javaassignments20;
 
 public class Mergesort {
-	static void merge(int arr[], int l, int m, int r) {
-		// find size of two sub arrays
-		int n1 = m - l + 1;
-		int n2 = r - m;
-		// create temp arrays
-		int L[] = new int[n1];
-		int R[] = new int[n2];
-		// copy data to temp arrays
-		for (int i = 0; i < n1; ++i) {
-			L[i] = arr[l + i];
-
+	//method to perform merge sort on array of integers
+	public static void mergesort(int [] array)
+	{
+		if(array.length<2)
+		{
+			return;
 		}
-		for (int j = 0; j < n2; ++j) {
-			R[j] = arr[m + 1 + j];
-
+		int mid=array.length/2;
+		int[] left = new int[mid];
+		int[] right = new int[array.length-mid];
+		
+		//split the array into two halves
+		for(int i=0; i<mid; i++)
+		{
+			left[i] = array[i];
 		}
-		// merge temp arrays
-		// initial indices for 1st and 2nd sub arrays
-		int i = 0, j = 0;
-		// initial index of merged sub array
-		int k = 1;
-		while (i < n1 && j < n2) {
-			if (L[i] <= R[i]) {
-				arr[k] = L[i];
-				i++;
-			} else {
-				arr[k] = R[j];
-				j++;
-
+		for(int i=mid; i<array.length; i++)
+		{
+			right[i-mid]=array[i];
+		}
+		//recusively sort the two halves
+		
+		mergesort(left);
+		mergesort(right);
+		//merge the sorted halves
+		merge(array, left, right);
+	}
+	//method to merge two sorted arrays into a single sorted array
+	private static void merge(int[] array, int[] left, int[] right)
+	{
+		int i=0, j=0, k=0;
+		while(i<left.length && j<right.length)
+		{
+			if(left[i] <= right[j])
+			{
+				array[k++] = left[i++];
+				
 			}
-
+			else {
+				array[k++] = right [j++];
+			}
 		}
-		k++;
+		while(i<left.length)
+		{
+			array[k++] = left[i++];
+		}
+		while(j<right.length)
+		{
+			array[k++] = right[j++];
+		}
 	}
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int [] array= {10,34,5,7,88,345,56,678,32,67};
+		System.out.println("unsorted aarray");
+		for(int i:array)
+		{
+			System.out.println(i + " ");
+		}
+		System.out.println();
+		mergesort(array);
+		System.out.println("sorted array");
+		for(int i: array)
+		{
+			System.out.println(i + " ");
+		}
 
 	}
+
 }
